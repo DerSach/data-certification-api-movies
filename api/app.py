@@ -58,6 +58,6 @@ def predict(title,
  
     X_pred = pd.DataFrame(data = dico)
     model = joblib.load('model.joblib')
-    popularity = model.predict(X_pred)
+    popularity = float(model.predict(X_pred))
     return {title: 'title',
             'popularity':popularity}
